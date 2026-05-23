@@ -131,12 +131,7 @@ public class CategoryInfoServiceImpl implements CategoryInfoService {
 
         List<CategoryInfo> list = repo.findAllById(ids);
 
-        // 强校验：前端参与排序的数据必须与数据库记录一模一样
-        Set<Integer> dbSet = list.stream()
-                .map(CategoryInfo::getCategoryId)
-                .collect(Collectors.toSet());
-
-        if (!dbSet.equals(new HashSet<>(ids))) {
+        if (ids.size() != list.size()) {
             throw new BusinessException(ResponseCodeEnum.BAD_REQUEST);
         }
 
