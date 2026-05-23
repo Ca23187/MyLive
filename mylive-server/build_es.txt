@@ -1,0 +1,30 @@
+PUT /mylive_es
+{
+    "mappings": {
+        "properties": {
+            "video_name":{
+                "type": "text",
+                "analyzer": "ik_max_word"
+            },
+            "tags": {
+                "type": "keyword",
+                "index": false
+            },
+            "playCount": {
+                "type": "integer",
+                "index": false
+            },
+            "danmakuCount": {
+                "type": "integer",
+                "index": false
+            },
+            "saveCount": {
+                "type": "integer",
+                "index": false
+            },
+            "createdAt": {
+                "type": "date"
+            }
+        }
+    }
+}

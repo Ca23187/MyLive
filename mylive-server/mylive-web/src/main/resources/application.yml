@@ -1,0 +1,51 @@
+server:
+  port: ${WEB_SERVER_PORT:7071}
+  forward-headers-strategy: native
+
+spring:
+  application:
+    name: mylive-web
+
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  data:
+    redis:
+      database: ${REDIS_DATABASE:1}
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD}
+      timeout: 60s
+
+  mail:
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT:465}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    default-encoding: UTF-8
+
+  elasticsearch:
+    uris: ${ELASTICSEARCH_URIS:http://localhost:9200}
+
+app:
+  project-folder: ${APP_PROJECT_FOLDER}
+  mail:
+    from: ${MAIL_FROM}
+
+minio:
+  endpoint: ${MINIO_ENDPOINT}
+  public-endpoint: ${MINIO_PUBLIC_ENDPOINT}
+  access-key: ${MINIO_ACCESS_KEY}
+  secret-key: ${MINIO_SECRET_KEY}
+  bucket-name: ${MINIO_BUCKET_NAME}
+  base-prefix: ${MINIO_BASE_PREFIX:file/}
+  auto-create-bucket: ${MINIO_AUTO_CREATE_BUCKET:true}
+
+storage:
+  type: ${STORAGE_TYPE:local}
+
+es:
+  index-name: ${ES_INDEX_NAME:mylive_video}
