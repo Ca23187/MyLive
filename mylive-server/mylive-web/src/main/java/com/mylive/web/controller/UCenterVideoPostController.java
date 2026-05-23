@@ -19,8 +19,6 @@ import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Locale;
-
 @RestController
 @RequestMapping("/ucenter")
 @RequiredArgsConstructor

@@ -15,9 +15,10 @@ import com.mylive.service.user.UserInfoService;
 import com.mylive.service.video.VideoInfoService;
 import jakarta.validation.constraints.*;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.Locale;
+import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/uhome")
